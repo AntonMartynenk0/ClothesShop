@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/registration.css">
+    <title>Registration</title>
+</head>
+
+<header>
+
+</header>
+
+<body>
+<div>
+    <form class="form" action="">
+        <p>Choose role</p>
+        <select>
+            <option th:each="roles : ${roles}">
+                <p th:text="${roles.getName()}"/>
+            </option>
+        </select>
+        <br/>
+        <input type="text" placeholder="First Name"><br/>
+        <input type="text" placeholder="Last Name"><br/>
+        <input type="email" placeholder="Email"><br/>
+        <input type="text" placeholder="Phone number"><br/>
+        <input type="password" placeholder="Password"><br/>
+        <input type="submit" value="Create Account" >
+    </form>
+
+    <br/>
+</div>
+
+<div>
+    <!--        <a th:href="@{/people/{id}(id=${role.getId()})}" th:text="${person.getName()}">user</a>-->
+    <!--        <p th:text="${roles.getName()}">user</p>-->
+</div>
+
+</body>
+
+<footer>
+
+</footer>
+</html>

@@ -1,0 +1,10 @@
+body{
+    padding: 0;
+}
+
+.header {
+    background: red;
+    font: 18px Arial, sans-serif;
+    height: 50px;
+    width: 100%;
+}

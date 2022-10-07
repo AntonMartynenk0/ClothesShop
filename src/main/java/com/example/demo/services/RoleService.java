@@ -5,8 +5,8 @@ import com.example.demo.repositories.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RoleService {
@@ -19,9 +19,19 @@ public class RoleService {
     }
 
     public List<Role> getAll(){
-        List<Role> roles = new ArrayList<>();
-        repository.findAll()
-                .forEach(roles::add);
-        return roles;
+
+        return repository.findAll()
+                .stream().filter(role -> role.getId() != 1)
+                .collect(Collectors.toList());
+    }
+
+    public Role getById(long id){
+
+        return repository.findById(id).orElse(null);
+    }
+
+    public Role getByName(String name){
+
+        return repository.findByName(name).stream().findFirst().orElse(null);
     }
 }

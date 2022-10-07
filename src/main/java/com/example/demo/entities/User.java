@@ -14,11 +14,16 @@ import java.util.Collection;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(
+        name = "user_details"
+)
 public class User {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(
+            strategy = GenerationType.AUTO
+    )
     @Column(name = "id", nullable = false)
-    private int id;
+    private Long id;
     @Basic
     @Column(name = "name", nullable = false, length = -1)
     private String name;
@@ -44,4 +49,15 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "role_id", nullable = false)
     private Role roleId;
+
+    public User(String name, String surname, String email, String phone, String password, Date dateOfReg, Role roleId) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+        this.dateOfReg = dateOfReg;
+        this.roleId = roleId;
+        this.receiptsId = null;
+    }
 }

@@ -2,43 +2,97 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/registration.css">
+    <link type="text/css" href="registration.css" rel="stylesheet"/>
     <title>Registration</title>
 </head>
-
-<header>
-
-</header>
-
 <body>
-<div>
-    <form class="form" action="">
-        <p>Choose role</p>
-        <select>
-            <option th:each="roles : ${roles}">
-                <p th:text="${roles.getName()}"/>
-            </option>
-        </select>
-        <br/>
-        <input type="text" placeholder="First Name"><br/>
-        <input type="text" placeholder="Last Name"><br/>
-        <input type="email" placeholder="Email"><br/>
-        <input type="text" placeholder="Phone number"><br/>
-        <input type="password" placeholder="Password"><br/>
-        <input type="submit" value="Create Account" >
-    </form>
-
-    <br/>
+<!--<div>-->
+<!--    &lt;!&ndash;        <a th:href="@{/people/{id}(id=${role.getId()})}" th:text="${person.getName()}">user</a>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <p th:text="${roles.getName()}">user</p>&ndash;&gt;-->
+<!--</div>-->
+<header>
+    <div class="logo">
+        <a href="index.html"><h1>Clothes<span>Shop</span></h1></a>
+    </div>
+    <nav>
+        <ul>
+            <a href="#">
+                <li>Woman</li>
+            </a>
+            <a href="#">
+                <li>Man</li>
+            </a>
+            <a href="#">
+                <li>Kids</li>
+            </a>
+            <a href="#">
+                <li>Sale</li>
+            </a>
+            <a href="#">
+                <li>Account</li>
+            </a>
+        </ul>
+    </nav>
+</header>
+<div class="content">
+    <div class="container">
+        <div class="title">Registration</div>
+        <form action="/register/new-user" method="get">
+            <div class="user-details">
+                <div class="input-box">
+                    <input type="text" placeholder="First Name" required th:name="name">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Last Name" required th:name="surname">
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required th:name="email">
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Phone number" required th:name="phone">
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required th:name="password">
+                </div>
+            </div>
+            <div class="user-role">
+                <input type="radio" name="role" id="dot-1" th:name="sellerRole">
+                <input type="radio" name="role" id="dot-2" th:name="buyerRole">
+                <span class="role-title">Who are you?</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="role">Buyer</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="role">Seller</span>
+                    </label>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+        <div class="link">
+            <span>Already have an account?<a href="#">Login</a></span>
+        </div>
+    </div>
 </div>
 
-<div>
-    <!--        <a th:href="@{/people/{id}(id=${role.getId()})}" th:text="${person.getName()}">user</a>-->
-    <!--        <p th:text="${roles.getName()}">user</p>-->
-</div>
-
+<!-- <div class="reg_log">
+  <div class="reg">
+      <a href="register.html">Register</a>
+  </div>
+  <br/>
+  <div class="log">
+      <a href="login">Login</a>
+  </div>
+</div> -->
 </body>
-
 <footer>
 
 </footer>
+
+</body>
 </html>

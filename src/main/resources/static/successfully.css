@@ -1,0 +1,122 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* justify-content: space-between; */
+    align-items: center;
+    background: #fff;
+}
+
+header {
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #363636;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    min-width: 150px;
+    max-width: 150px;
+    height: 50px;
+}
+
+.logo a h1 {
+    font-size: 100%;
+    margin-left: 25px;
+    font-family: 'Alfa Slab One', cursive;
+    color: #9b59b7;
+    width: 150px;
+}
+
+header span {
+    color: #ffffff;
+}
+
+header nav {
+    display: flex;
+    align-items: normal;
+}
+
+header ul {
+    width: max-content;
+    height: 100%;
+    float: right;
+}
+
+header li {
+    display: inline-block;
+    padding: 0 25px;
+    height: 100%;
+}
+
+header a {
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+header a:hover {
+    color: #71b7e7;
+    transition: 0.5s;
+}
+
+.content {
+    padding: 25px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.massage {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    padding: 30px 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    border-radius: 10px;
+    border-width: 3px;
+}
+
+.massage span {
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff
+}
+
+.massage .button_back {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.button_back a {
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #363636;
+}
+
+.button_back a:hover {
+    color: #9b59b7;
+    transition: ease-in 0.15s;
+}

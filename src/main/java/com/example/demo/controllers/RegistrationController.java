@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Objects;
-
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
@@ -35,9 +33,7 @@ public class RegistrationController {
                                @RequestParam(value = "email", required = false) String email,
                                @RequestParam(value = "phone", required = false) String phone,
                                @RequestParam(value = "password", required = false) String password,
-                               @RequestParam(value = "sellerRole", required = false) String sellerRole,
-                               @RequestParam(value = "buyerRole", required = false) String buyerRole) {
-        String role = Objects.equals(sellerRole, "on") ? "Seller" : "Buyer";
-        return userService.addUser(name, surname, email, phone, password, role) ? "successful" : "unsuccessful";
+                               @RequestParam(value = "role", required = false) String radioRole){
+        return userService.addUser(name, surname, email, phone, password, radioRole) ? "successfully" : "unsuccessfully";
     }
 }

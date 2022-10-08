@@ -6,6 +6,7 @@ import com.example.demo.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
+import java.util.NoSuchElementException;
 
 
 @Service
@@ -22,8 +23,8 @@ public class UserService {
         boolean isSuccessful = false;
         boolean isAlreadyExists;
         try {
-            isAlreadyExists = repository.findByEmailAndPhone(email, phone).stream().findFirst().isPresent();
-        } catch (NullPointerException e) {
+            isAlreadyExists = repository.findByEmailAndPhone(email, phone).stream().findFirst().get() != null;
+        } catch (NullPointerException | NoSuchElementException e) {
             isAlreadyExists = false;
         }
         boolean isAdmin = roleName.equals("Admin");

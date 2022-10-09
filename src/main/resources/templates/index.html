@@ -3,36 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/index.css">
-    <link type="text/css" href="index.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../static/index.css">
+    <link th:href="@{/index.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/body.css">
+    <link th:href="@{/body.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/header.css">
+    <link th:href="@{/header.css}" rel="stylesheet"/>
     <title>Index</title>
 </head>
 
 <body>
-<header>
-    <div class="logo">
-        <a href="index.html"><h1>Clothes<span>Shop</span></h1></a>
-    </div>
-    <nav>
-        <ul>
-            <a href="#">
-                <li>Woman</li>
-            </a>
-            <a href="#">
-                <li>Man</li>
-            </a>
-            <a href="#">
-                <li>Kids</li>
-            </a>
-            <a href="#">
-                <li>Sale</li>
-            </a>
-            <a href="#">
-                <li>Account</li>
-            </a>
-        </ul>
-    </nav>
-</header>
+<div th:replace="layout :: header"/>
 <div class="content">
     <div class="container">
         <div class="title">Registration</div>
@@ -84,7 +65,7 @@
 
 <!-- <div class="reg_log">
   <div class="reg">
-      <a href="register.html">Register</a>
+      <a href="up.html">Register</a>
   </div>
   <br/>
   <div class="log">

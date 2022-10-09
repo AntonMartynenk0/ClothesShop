@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/register")
+@RequestMapping("/sign/up")
 public class RegistrationController {
 
     RoleService roleService;
@@ -24,7 +24,7 @@ public class RegistrationController {
     @GetMapping("")
     public String register(Model model) {
         model.addAttribute("roles", roleService.getAll());
-        return "register";
+        return "/sign/up";
     }
 
     @GetMapping("/new-user")
@@ -34,6 +34,6 @@ public class RegistrationController {
                                @RequestParam(value = "phone", required = false) String phone,
                                @RequestParam(value = "password", required = false) String password,
                                @RequestParam(value = "role", required = false) String radioRole){
-        return userService.addUser(name, surname, email, phone, password, radioRole) ? "successfully" : "unsuccessfully";
+        return userService.addUser(name, surname, email, phone, password, radioRole) ? "/messages/successfully" : "/messages/unsuccessfully";
     }
 }

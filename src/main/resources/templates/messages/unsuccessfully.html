@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Congrats</title>
+    <link rel="stylesheet" href="../../static/registration_result.css">
+    <link th:href="@{/registration_result.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/body.css">
+    <link th:href="@{/body.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/header.css">
+    <link th:href="@{/header.css}" rel="stylesheet"/>
+</head>
+<body>
+<div th:replace="layout :: header"/>
+<div class="content">
+    <div class="message">
+        <span>User has not been created:(</span>
+        <div class="button">
+            <a href="/register">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="24"
+                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <line x1="5" y1="12" x2="11" y2="18"></line>
+                    <line x1="5" y1="12" x2="11" y2="6"></line>
+                </svg>
+                Back to Registration</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

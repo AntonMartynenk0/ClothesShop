@@ -20,13 +20,17 @@
     justify-content: space-between;
 }
 
+form {
+    width: 100%;
+}
+
 form .user-details .input-box {
     width: calc(100% / 2 - 20px);
 }
 
 .user-details .input-box input {
     height: 45px;
-    width: 100%;
+    width: -webkit-fill-available;
     margin-bottom: 20px;
     font-size: 16px;
     font-weight: 500;
@@ -80,8 +84,8 @@ form .user-role .category .dot {
     transition: all ease 0.3s;
 }
 
-#dot-1:checked~.category label .one,
-#dot-2:checked~.category label .two {
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two {
     border-color: #d9d9d9;
     background: #9b59b6;
 }
@@ -95,7 +99,13 @@ form input[type="radio"] {
     display: none;
 }
 
-.link{
+form input[type="number"]::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.link {
     display: flex;
     justify-content: center;
     margin-top: 15px;
@@ -104,8 +114,21 @@ form input[type="radio"] {
 
 }
 
-.link a{
+.link a {
     text-decoration: none;
     color: #71b7e6;
     margin-left: 5px;
+}
+
+.result_message {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    margin-bottom: 20px
+}
+
+.message {
+    font-size: 16px;
 }

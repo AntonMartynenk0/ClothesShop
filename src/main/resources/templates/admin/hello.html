@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <link rel="stylesheet" href="../../static/body.css">
+    <link th:href="@{/body.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../static/header.css">
+    <link th:href="@{/header.css}" rel="stylesheet"/>
+</head>
+<body>
+<div th:replace="layout :: header"/>
+<p>Hello World</p>
+<table border="1px">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Date of Registration</th>
+        <th>Role</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <th th:text="${user.getName()}"></th>
+        <th th:text="${user.getSurname()}"></th>
+        <th th:text="${user.getEmail()}"></th>
+        <th th:text="${user.getPhone()}"></th>
+        <th th:text="${user.getDateOfReg()}"></th>
+        <th th:text="${#strings.setJoin(user.getRoles(), ', ')}"></th>
+    </tr>
+</table>
+</body>
+</html>

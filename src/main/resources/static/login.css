@@ -1,7 +1,3 @@
-.content {
-    padding: 25px;
-}
-
 .container {
     max-width: 700px;
     width: 100%;
@@ -20,17 +16,22 @@
 
 .container form .user-details {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+form {
+    width: 100%;
 }
 
 form .user-details .input-box {
-    width: calc(100% / 2 - 20px);
+    width: 100%;
 }
 
 .user-details .input-box input {
     height: 45px;
-    width: 100%;
+    width: -webkit-fill-available;
     margin-bottom: 20px;
     font-size: 16px;
     font-weight: 500;
@@ -47,20 +48,13 @@ form .user-details .input-box {
 }
 
 .button input {
-    width: 100%;
+    width: 350px;
     height: 45px;
-    background: #9b59b6;
     font-size: 16px;
-    color: #fff;
+    color: #9b59b7;
     border-radius: 10px;
     border-width: 0;
-    background: linear-gradient(15deg, #9b59b7, #71b7e7);
-}
-
-.button input:hover {
-
-    background: linear-gradient(60deg, #9b59b7, #71b7e7);
-    transition: all ease 0.3s;
+    background: #fff;
 }
 
 form .user-role .role-title {
@@ -106,6 +100,12 @@ form input[type="radio"] {
     display: none;
 }
 
+form input[type="number"]::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .link {
     display: flex;
     justify-content: center;
@@ -119,4 +119,17 @@ form input[type="radio"] {
     text-decoration: none;
     color: #71b7e6;
     margin-left: 5px;
+}
+
+.result_message {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    margin-bottom: 20px
+}
+
+.message {
+    font-size: 16px;
 }

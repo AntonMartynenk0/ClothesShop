@@ -5,6 +5,7 @@ header {
     background-color: #363636;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 header .logo {
@@ -28,14 +29,14 @@ header span {
 }
 
 header nav {
-    display: flex;
-    align-items: normal;
+    padding: 0 20px;
 }
 
 header ul {
-    width: max-content;
+    display: flex;
     height: 100%;
     float: right;
+    align-items: center;
 }
 
 header li {
@@ -45,6 +46,7 @@ header li {
 }
 
 header a {
+    padding: 25px 0;
     text-align: center;
     text-decoration: none;
     color: #ffffff;
@@ -56,3 +58,27 @@ header a:hover {
     color: #71b7e7;
     transition: 0.5s;
 }
+
+nav ul form {
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+nav ul form input {
+    display: inline-block;
+    height: 50px;
+    background-color: #363636;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav ul form input:hover {
+    color: #71b7e7;
+    transition: 0.5s;
+}
+

@@ -21,6 +21,9 @@
             <a href="#">
                 <li>Account</li>
             </a>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Logout">
+            </form>
         </ul>
     </nav>
 </header>

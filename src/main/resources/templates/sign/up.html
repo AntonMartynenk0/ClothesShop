@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="../../static/registration.css">
+    <link rel="stylesheet" href="../static/registration.css">
     <link th:href="@{/registration.css}" rel="stylesheet"/>
     <link rel="stylesheet" href="../static/body.css">
     <link th:href="@{/body.css}" rel="stylesheet"/>
@@ -23,8 +22,11 @@
 <div class="content">
     <div class="container">
         <div class="title">Sign up</div>
-        <form action="/sign/up/new-user" method="get">
+        <form th:action="@{/sign/up}" method="post">
             <div class="user-details">
+                <div class="result_message" th:style="${display_message}">
+                    <span class="message" th:text="${message}"></span>
+                </div>
                 <div class="input-box">
                     <input type="text" placeholder="First Name" required th:name="name">
                 </div>
@@ -41,28 +43,12 @@
                     <input type="password" placeholder="Password" required th:name="password">
                 </div>
             </div>
-            <div class="user-role">
-                <input type="radio" name="role" id="dot-1" value="Buyer" th:value="Buyer" th:name="role"
-                       checked="checked">
-                <input type="radio" name="role" id="dot-2" value="Seller" th:value="Seller" th:name="role">
-                <span class="role-title">Who are you?</span>
-                <div class="category">
-                    <label for="dot-1">
-                        <span class="dot one"></span>
-                        <span class="role">Buyer</span>
-                    </label>
-                    <label for="dot-2">
-                        <span class="dot two"></span>
-                        <span class="role">Seller</span>
-                    </label>
-                </div>
-            </div>
             <div class="button">
-                    <input class="submit" type="submit" value="Register">
+                <input class="submit" type="submit" value="Register">
             </div>
         </form>
         <div class="link">
-            <span>Already have an account?<a href="#">Login</a></span>
+            <span>Already have an account?<a href="/sign/in">Login</a></span>
         </div>
     </div>
 </div>
